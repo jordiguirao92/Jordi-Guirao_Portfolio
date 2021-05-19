@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export const Wrapper = styled.div`
   width: ${props => props.width ? props.width : 'auto'};
   height: ${props => props.height ? props.height : '100vh'};
-  background-image: linear-gradient(180deg, #323767 60%, ${theme.colors.white} 90%);
+  background-image: linear-gradient(180deg, #323767 70%, ${theme.colors.white} 95%);
 `
 export const WrapperDiv = styled.div`
   min-height: 100vh;
@@ -19,20 +19,30 @@ export const Spacer = styled.div`
       return '20px';
     }
   }};
+  width: ${props => {
+    if (props.width) {
+      return props.width;
+    } else {
+      return '0px';
+    }
+  }};
 `
 
 export const Flex = styled.div`
   width: ${props => props.width ? props.width : ''};
+  max-width: ${props => props.maxWidth ? props.maxWidth : '1000px'};
   height: ${props => props.height ? props.height : ''};
   display: flex;
   flex-direction: ${props => props.direction ? props.direction : 'row'};
   justify-content: ${props => props.justify ? props.justify : 'space-between'};
   align-items: ${props => props.align ? props.align : 'center'};
-  margin: ${props => props.margin ? props.margin : ''};
+  margin: ${props => props.margin ? props.margin : 'auto'};
   padding: ${props => props.padding ? props.padding : ''};
   background-color: ${props => props.backColor ? props.backColor : ''};
+  background-image: ${props => props.backImage ? props.backImage : ''};
   color: ${props => props.color ? props.color : ''};
   flex-wrap: ${props => props.wrap ? props.wrap : 'nowrap'};
+  border-radius: ${props => props.borderRadius ? props.borderRadius : ''};
 `
 
 //Footer
@@ -127,9 +137,23 @@ export const H1 = styled.h1`
 `
 export const H3 = styled.h3`
   color: ${props => props.color ? props.color : 'white'};
-  margin: 10px 0px;
-  font-weight: 500;
+  margin: ${props => props.margin ? props.margin : '10px 0px'};;
+  font-weight: ${props => props.weight ? props.weight : '500'};
 `
+export const H3Colored = styled.h3`
+  color: ${props => props.color ? props.color : 'transparent'};
+  margin: ${props => props.margin ? props.margin : '10px 0px'};
+  font-weight: ${props => props.weight ? props.weight : '500'};
+  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+`
+export const H4 = styled.h4`
+  color: ${props => props.color ? props.color : 'white'};
+  margin: ${props => props.margin ? props.margin : '10px 0px'};;
+  font-weight: ${props => props.weight ? props.weight : '500'};
+`
+
 export const FlexHome = styled.div`
   width: ${props => props.width ? props.width : ''};
   height: ${props => props.height ? props.height : ''};
@@ -198,7 +222,7 @@ export const FlexAboutCard = styled.div`
   align-items: ${props => props.align ? props.align : 'stretch'};
   margin: ${props => props.margin ? props.margin : '20px'};
   padding: ${props => props.padding ? props.padding : ''};
-  background-color: ${props => props.backColor ? props.backColor : 'grey'};
+  background-color: ${props => props.backColor ? props.backColor : ''};
   color: ${props => props.color ? props.color : ''};
   flex-wrap: ${props => props.wrap ? props.wrap : 'nowrap'};
   border: ${props => props.borderSize ? props.borderSize : '3px'} solid ${props => props.colorBorder ? props.colorBorder : 'grey'};
@@ -211,7 +235,9 @@ export const FlexAboutCard = styled.div`
 
 export const P = styled.p`
   color: ${props => props.color ? props.color : 'white'};
-  margin: 0px
+  margin: ${props => props.margin ? props.margin : '0px'};
+  font-weight: ${props => props.weight ? props.weight : ''};
+  font-style: ${props => props.fontstyle ? props.fontstyle : ''};
 `
 export const ImageProfileAbout = styled.img`
   height: ${props => props.height ? props.height : '220px'};
