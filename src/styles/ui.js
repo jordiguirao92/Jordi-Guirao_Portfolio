@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export const Wrapper = styled.div`
   width: ${props => props.width ? props.width : 'auto'};
   height: ${props => props.height ? props.height : '100vh'};
-  background-image: linear-gradient(180deg, #323767 70%, ${theme.colors.white} 95%);
+  background-image: linear-gradient(180deg, #323767 85%, ${theme.colors.white} 95%);
 `
 export const WrapperDiv = styled.div`
   min-height: 100vh;
@@ -252,3 +252,21 @@ export const ImageProfileAbout = styled.img`
 
 `
 
+
+
+//Contact
+export const Input = styled.input`
+  width: ${props => props.width ? props.width : '80%'};
+  max-width: ${props => props.maxWidth ? props.maxWidth : '1000px'};
+  height: ${props => props.height ? props.height : 'auto'};
+  border: 1px solid ${props => props.colorBorder ? props.colorBorder : theme.colors.primary};
+  border-radius: ${props => props.borderRadius ? props.borderRadius : '7px'};;
+`
+
+export const TextArea = styled.textarea`
+  width: ${props => props.width ? props.width : 'auto'};
+  height: ${props => props.height ? props.height : 'auto'};
+  border: 1px solid ${props => props.colorBorder ? props.colorBorder : theme.colors.primary};
+  border-radius: ${props => props.borderRadius ? props.borderRadius : '7px'};;
+`
+ 

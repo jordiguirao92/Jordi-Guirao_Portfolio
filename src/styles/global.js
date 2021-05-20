@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Hind Madurai', sans-serif;
     
 }
+
 `
 
 export default GlobalStyles;

@@ -15,7 +15,7 @@ const HomePage = () => {
         <>
            <MainLayout>
            <Spacer height='40px'/>
-           <Slide right duration={2000}>
+           <Slide up duration={2000}>
             <FlexHomeContent>
                     <FlexHome margin='40px'>
                         <Slide left duration={2000}>

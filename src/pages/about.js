@@ -4,18 +4,21 @@ import {useHistory} from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
+import {faCaretSquareDown, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 import MainLayout from '../componets/layout/MainLayout'
 import {H1, H3, H3Colored, H4, P, Spacer, FlexAboutCard, ImageProfileAbout, Flex} from '../styles/ui';
 import profileImage from '../images/IMG_1595.jpg'
-import developerImage from '../images/Developer.png'
 import {experience, organisations, education, certifications} from '../data/jordiData';
 
 
 const AboutPage = () => {
-    const [set, Set] = useState(true);
- 
+    const [experiences, setexperiences] = useState(true);
+    const [organisation, setOrganisations] = useState(false);
+    const [educations, setEducations] = useState(false);
+    const [certification, setCertification] = useState(false);
+    
+
     return(
         <>
            <MainLayout>
@@ -27,9 +30,11 @@ const AboutPage = () => {
                         <Flex justify='flex-start' width='100%'>
                             <H1>Jordi Guirao Muns</H1>
                             <Flex margin='0px 0px 0px auto' >
-                                <a href='https://github.com/jordiguirao92' target='_blank'><FontAwesomeIcon icon={faGithub}  style={{ color: 'black' }} size="3x"/></a>
-                                <Spacer width='30px'/>
-                                <a href='https://www.linkedin.com/in/jordiguiraomuns/' target='_blank'><FontAwesomeIcon icon={faLinkedin}  size="3x"  style={{ color: '#0A66C2' }}/></a>
+                                <a href='https://github.com/jordiguirao92' target='_blank'><FontAwesomeIcon icon={faGithub} style={{ color: 'black' }} size="2x"/></a>
+                                <Spacer width='20px'/>
+                                <a href='https://www.linkedin.com/in/jordiguiraomuns/' target='_blank'><FontAwesomeIcon icon={faLinkedin} style={{ color: '#0A66C2' }} size="2x"/></a>
+                                <Spacer width='20px'/>
+                                <Link to='/contact'><FontAwesomeIcon icon={faEnvelope} style={{ color: '#900C3F' }} size="2x"/></Link>
                             </Flex>  
                         </Flex>
                         <H3 color='black' weight='bold'>Front End Developer & Blockchain&DLTs Engineer</H3>
@@ -39,12 +44,15 @@ const AboutPage = () => {
             </FlexAboutCard>
 
             <Flex direction='column' width='80%' align='flex-start'>
-                <H3Colored weight='bold'>EXPERIENCE</H3Colored>
+                <Flex width='100%' margin='0px'>
+                    <H3Colored weight='bold'>EXPERIENCE</H3Colored>
+                    <FontAwesomeIcon icon={faCaretSquareDown} style={{color: '#fc87da'}} size="2x" rotation={experiences ? 180 : 360} onClick={() => {setexperiences(!experiences)}}/>
+                </Flex>
                 <Flex backImage='linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);' width='100%' height='5px'/>
+                <Spacer/>
             </Flex>
-            
             {experience.map((experience) => {
-                if(true){
+                if(experiences){
                     if(window.innerWidth > 580) {
                     return(
                         <FlexAboutCard direction='column' backColor='grey' margin='5px'>
@@ -72,11 +80,15 @@ const AboutPage = () => {
                 })}
 
             <Flex direction='column' width='80%' align='flex-start'>
-                <H3Colored weight='bold'>ORGANISATIONS</H3Colored>
+                <Flex width='100%' margin='0px'>
+                    <H3Colored weight='bold'>ORGANISATIONS</H3Colored>
+                    <FontAwesomeIcon icon={faCaretSquareDown} style={{color: '#fc87da'}} size="2x" rotation={organisation ? 180 : 360} onClick={() => {setOrganisations(!organisation)}}/>
+                </Flex>
                 <Flex backImage='linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);' width='100%' height='5px'/>
+                <Spacer/>
             </Flex>
             {organisations.map((experience) => {
-                if(true){
+                if(organisation){
                     if(window.innerWidth > 580) {
                     return(
                         <FlexAboutCard direction='column' backColor='grey' margin='5px'>
@@ -106,11 +118,15 @@ const AboutPage = () => {
 
 
             <Flex direction='column' width='80%' align='flex-start'>
-                <H3Colored weight='bold'>EDUCATION</H3Colored>
+                <Flex width='100%' margin='0px'>
+                    <H3Colored weight='bold'>EDUCATION</H3Colored>
+                    <FontAwesomeIcon icon={faCaretSquareDown} style={{color: '#fc87da'}} size="2x" rotation={educations ? 180 : 360} onClick={() => {setEducations(!educations)}}/>
+                </Flex>
                 <Flex backImage='linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);' width='100%' height='5px'/>
+                <Spacer/>
             </Flex>
             {education.map((study) => {
-                if(true){
+                if(educations){
                     if(window.innerWidth > 580) {
                     return(
                         <FlexAboutCard direction='column' backColor='grey' margin='5px'>
@@ -138,12 +154,16 @@ const AboutPage = () => {
                 }
                 })}
 
-                <Flex direction='column' width='80%' align='flex-start'>
+            <Flex direction='column' width='80%' align='flex-start'>
+                <Flex width='100%' margin='0px'>
                     <H3Colored weight='bold'>CERTIFICATION</H3Colored>
-                    <Flex backImage='linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);' width='100%' height='5px'/>
+                    <FontAwesomeIcon icon={faCaretSquareDown} style={{color: '#fc87da'}} size="2x" rotation={certification ? 180 : 360} onClick={() => {setCertification(!certification)}}/>
                 </Flex>
+                <Flex backImage='linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);' width='100%' height='5px'/>
+                <Spacer/>
+            </Flex>
                 {certifications.map((certificate) => {
-                    if(true){
+                    if(certification){
                         if(window.innerWidth > 580) {
                         return(
                             <FlexAboutCard direction='column' backColor='grey' margin='5px'>
