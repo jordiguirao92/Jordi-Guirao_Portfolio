@@ -235,7 +235,7 @@ export const FlexAboutCard = styled.div`
 
 export const P = styled.p`
   color: ${props => props.color ? props.color : 'white'};
-  margin: ${props => props.margin ? props.margin : '0px'};
+  margin: ${props => props.margin ? props.margin : '0'};
   font-weight: ${props => props.weight ? props.weight : ''};
   font-style: ${props => props.fontstyle ? props.fontstyle : ''};
 `
@@ -259,14 +259,106 @@ export const Input = styled.input`
   width: ${props => props.width ? props.width : '80%'};
   max-width: ${props => props.maxWidth ? props.maxWidth : '1000px'};
   height: ${props => props.height ? props.height : 'auto'};
-  border: 1px solid ${props => props.colorBorder ? props.colorBorder : theme.colors.primary};
-  border-radius: ${props => props.borderRadius ? props.borderRadius : '7px'};;
+  border-image-source: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  border-image-slice: 1;
+  border-width: 3px;
 `
 
 export const TextArea = styled.textarea`
   width: ${props => props.width ? props.width : 'auto'};
   height: ${props => props.height ? props.height : 'auto'};
-  border: 1px solid ${props => props.colorBorder ? props.colorBorder : theme.colors.primary};
-  border-radius: ${props => props.borderRadius ? props.borderRadius : '7px'};;
+  border-image-source: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  border-image-slice: 1;
+  border-width: 3px;
 `
  
+export const Label = styled.label`
+  font-size:20px;
+  color: ${props => props.color ? props.color : 'transparent'};
+  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+`
+
+export const Button = styled.button`
+  width: ${props => props.width ? props.width : '100%'};
+  height: ${props => props.height ? props.height : '40px'};
+  margin: ${props => props.margin ? props.margin : '0px'};
+  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  border: 0px solid;
+  border-radius: ${props => props.borderRadius ? props.borderRadius : '5px'};
+  color: ${props => props.color ? props.color : theme.colors.white};
+  font-size:20px;
+  cursor: pointer;
+
+  &:hover {
+    background-image: linear-gradient(-90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+    transform: scale(1.1);
+  }
+  `
+
+  //Portfolio
+  export const Card = styled.div`
+    width: ${props => props.width ? props.width : '80%'};
+    max-width: ${props => props.maxWidth ? props.maxWidth : '800px'};
+    height: ${props => props.height ? props.height : ''};
+    display: flex;
+    flex-direction: ${props => props.direction ? props.direction : 'row'};
+    justify-content: ${props => props.justify ? props.justify : 'space-between'};
+    align-items: ${props => props.align ? props.align : 'center'};
+    margin: ${props => props.margin ? props.margin : 'auto'};
+    padding: ${props => props.padding ? props.padding : 'auto'};
+    background-color: grey;
+    border: solid;
+    border-image-source: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+    border-image-slice: 1;
+    border-width: 3px;
+    box-shadow: ${props => props.shadow ? props.shadow : '5px 5px 5px grey'};
+    cursor: ${props => props.cursor ? props.cursor : ''};
+    flex-wrap: ${props => props.wrap ? props.wrap : 'nowrap'};
+
+    @media (max-width: 580px) {
+    flex-direction: column;
+    }
+  `
+
+export const FlexCard = styled.div`
+  width: ${props => props.width ? props.width : ''};
+  max-width: ${props => props.maxWidth ? props.maxWidth : '1000px'};
+  height: ${props => props.height ? props.height : ''};
+  display: flex;
+  flex-direction: ${props => props.direction ? props.direction : 'column'};
+  justify-content: ${props => props.justify ? props.justify : 'flex-start'};
+  align-items: ${props => props.align ? props.align : 'flex-start'};
+  margin: ${props => props.margin ? props.margin : '5px'};
+  padding: ${props => props.padding ? props.padding : ''};
+  background-color: ${props => props.backColor ? props.backColor : ''};
+  background-image: ${props => props.backImage ? props.backImage : ''};
+  color: ${props => props.color ? props.color : ''};
+  flex-wrap: ${props => props.wrap ? props.wrap : 'nowrap'};
+  border-radius: ${props => props.borderRadius ? props.borderRadius : ''};
+
+`
+
+export const TechCard = styled.div`
+  width: ${props => props.width ? props.width : ''};
+  max-width: ${props => props.maxWidth ? props.maxWidth : '1000px'};
+  height: ${props => props.height ? props.height : ''}; 
+  display: flex;
+  flex-wrap: ${props => props.wrap ? props.wrap : 'wrap'};
+  flex-direction: ${props => props.direction ? props.direction : 'row'};
+  justify-content: ${props => props.justify ? props.justify : 'flex-start'};
+  align-items: ${props => props.align ? props.align : 'flex-start'};
+  margin: ${props => props.margin ? props.margin : '5px 0px'};
+  background-color: ${props => props.backColor ? props.backColor : ''};
+  color: ${props => props.color ? props.color : ''};
+`
+export const TechElement = styled.div`
+  margin: ${props => props.margin ? props.margin : '5px'};
+  background-color: ${props => props.backColor ? props.backColor : 'white'};
+  color: ${props => props.color ? props.color : ''};
+  border-radius: ${props => props.borderRadius ? props.borderRadius : '20px'};
+  padding: 10px;
+  font-size: 12px;
+
+`

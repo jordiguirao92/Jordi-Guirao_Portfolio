@@ -3,51 +3,69 @@ import { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 import emailjs from 'emailjs-com';
-import dotenv from 'dotenv';
-//rocess.env.DB_HOST
-import MainLayout from '../componets/layout/MainLayout'
-import {Input, TextArea, H1, H3, Spacer, FlexHome, ImageHome, FlexHomeContent, ImageHomeCode, Flex} from '../styles/ui';
 
-const sendEmail = (event) => {
-    event.preventDefault();
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', event.target, 'YOUR_USER_ID')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-  }
+import MainLayout from '../componets/layout/MainLayout'
+import {Button, Input, Label, TextArea, P, H1, H3, Spacer, FlexHome, ImageHome, FlexHomeContent, ImageHomeCode, Flex} from '../styles/ui';
+const {REACT_APP_SERVICEID, REACT_APP_TEMPLATEID, REACT_APP_USERID } = process.env
+
 
 
 const ContactPage = () => {
+    const [formData, setFormData] = useState({
+        name:'',
+        email: '',
+        message: ''
+    });
+    const [error, setError] = useState('');
+
+    const sendEmail = (event) => {
+        event.preventDefault();
+        if(formData.name && formData.email && formData.message) {
+            setError('');
+            emailjs.sendForm(REACT_APP_SERVICEID, REACT_APP_TEMPLATEID, event.target, REACT_APP_USERID)
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        } else {
+            setError('Please fill all fields, thanks :)')
+        } 
+      };
+  
  
     return(
         <>
            <MainLayout>
-           <Spacer height='40px'/>
+           <Spacer height='150px'/>
            <Slide up duration={2000}>
             <Flex width='100%' justify='center' direction='column'>
                 <form onSubmit={sendEmail}>
+                    <Label htmlFor='name'>Name</Label>
                     <Input width='100%' 
                             height='40px' 
                             id='name' 
                             name='name' 
                             type='text' 
-                            placeholder='NAME' 
-                            value='' 
-                            onChange={(event) => {console.log(event.target.value) }}
+                            placeholder='Name' 
+                            value={formData.name} 
+                            onChange={(event) => {
+                                setFormData({...formData, name: event.target.value });}}
                             /> 
-                    <Spacer height='40px'/>   
+                    <Spacer height='30px'/>
+                    <Label htmlFor='email'>Email</Label>   
                     <Input width='100%' 
                             height='40px' 
                             id='email' 
                             name='email' 
                             type='email' 
-                            placeholder='EMAIL' 
-                            value='' 
-                            onChange={(event) => {console.log(event.target.value) }}
+                            placeholder='Email' 
+                            value={formData.email}
+                            onChange={(event) => {
+                                setFormData({...formData, email: event.target.value });}}
                             /> 
-                    <Spacer height='40px'/>
+                    <Spacer height='30px'/>
+                    <Label htmlFor='email'>Message</Label> 
                     <TextArea width='100%' height='100px' 
                                 id='message' 
                                 name='message' 
@@ -55,10 +73,15 @@ const ContactPage = () => {
                                 rows="4" 
                                 cols="50"
                                 placeholder='Write your message'
-                                value=''
-                                onChange={(event) => {console.log(event.target.value) }}
+                                value={formData.message}
+                                onChange={(event) => {
+                                    setFormData({...formData, message: event.target.value });}}
                             />
+                    <Spacer height='30px'/>
+                    {error && <P color='red'>&nbsp;{error}</P>}
+                    <Button>Contact me</Button>   
                 </form>
+                
             </Flex>
            </Slide>
            <Spacer height='40px'/>

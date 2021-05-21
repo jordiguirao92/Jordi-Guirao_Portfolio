@@ -21,7 +21,7 @@ const HomePage = () => {
                         <Slide left duration={2000}>
                             <H3>Hello, I am</H3>
                             <H1>JORDI GUIRAO MUNS</H1>
-                            <H3>Blockchain & DLTs Engineer and Front End Developer</H3>
+                            <H3 weight='bold'>Blockchain & DLTs Engineer and Front End Developer</H3>
                         </Slide>
                     </FlexHome>
                     <ImageHome src={profileImage}/>               
