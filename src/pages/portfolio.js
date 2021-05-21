@@ -24,7 +24,6 @@ const PortfolioPage = () => {
                         <Flex margin='0px 0px 0px 0px' width='100%'>
                             <H4 margin='5px 0px' weight='bold' color='black'>Project Name</H4>
                             <a href='https://github.com/jordiguirao92' target='_blank'><FontAwesomeIcon icon={faGithub} style={{ color: 'black' }} size="2x"/></a>
-
                         </Flex>
                         
                         <P fontstyle='oblique'>Description</P>
