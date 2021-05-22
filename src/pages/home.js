@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {useHistory} from 'react-router-dom';
 import Slide from 'react-reveal/Slide';
 
 import MainLayout from '../componets/layout/MainLayout'

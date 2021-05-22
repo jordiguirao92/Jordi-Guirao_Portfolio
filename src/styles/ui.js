@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import theme from '../styles/theme';
 import { Link } from 'react-router-dom';
 
+
 export const Wrapper = styled.div`
   width: ${props => props.width ? props.width : 'auto'};
   height: ${props => props.height ? props.height : '100vh'};
-  background-image: linear-gradient(180deg, #323767 85%, ${theme.colors.white} 95%);
+  background-image: linear-gradient(180deg, ${theme.colors.blue} 85%, ${theme.colors.white} 95%);
 `
 export const WrapperDiv = styled.div`
   min-height: 100vh;
@@ -63,7 +64,7 @@ export const FooterStyled = styled.footer`
 export const AFooter = styled.a`
   color: ${props => props.color ? props.color : 'transparent'};
   font-weight: 700;
-  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  background-image: ${theme.gradientPinkBlue};
   -webkit-background-clip: text;
   background-clip: text;
 
@@ -78,7 +79,7 @@ export const HeaderStyled = styled.header`
   flex-direction: ${props => props.direction ? props.direction : 'row'};
   justify-content: ${props => props.justify ? props.justify : 'space-around'};
   align-items: ${props => props.align ? props.align : 'center'};
-  background-color: ${props => props.backColor ? props.backColor : '#323767'};
+  background-color: ${props => props.backColor ? props.backColor : theme.colors.blue};
   width: 100%;
   
   @media (max-width: 580px) {
@@ -90,7 +91,7 @@ export const HeaderStyled = styled.header`
 export const AHeader = styled.a`
   color: ${props => props.color ? props.color : 'transparent'};
   font-weight: 700;
-  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  background-image: ${theme.gradientPinkBlue};
   -webkit-background-clip: text;
   background-clip: text;
 
@@ -101,7 +102,7 @@ export const AHeader = styled.a`
 
 export const LinkHeader = styled(Link)`
   text-decoration: none;
-  color: ${props => props.color ? props.color : '#fff'};
+  color: ${props => props.color ? props.color : theme.colors.white};
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
   border-radius: 10px;
@@ -112,14 +113,14 @@ export const LinkHeader = styled(Link)`
   }
 
   &:active{
-        background-color: #fff;
-        color: #323767;
+        background-color: ${theme.colors.white};
+        color: ${theme.colors.blue};
         font-weight: 700;
     }
 
     &.activated {
-        background-color: #fff;
-        color: #323767;
+        background-color: ${theme.colors.white};
+        color: ${theme.colors.blue};
         font-weight: 700;
     }
 
@@ -131,12 +132,12 @@ export const H1 = styled.h1`
   color: ${props => props.color ? props.color : 'transparent'};
   font-weight: 800;
   margin: 10px 0px;
-  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  background-image: ${theme.gradientPinkBlue};
   -webkit-background-clip: text;
   background-clip: text;
 `
 export const H3 = styled.h3`
-  color: ${props => props.color ? props.color : 'white'};
+  color: ${props => props.color ? props.color : theme.colors.white};
   margin: ${props => props.margin ? props.margin : '10px 0px'};;
   font-weight: ${props => props.weight ? props.weight : '500'};
 `
@@ -144,7 +145,7 @@ export const H3Colored = styled.h3`
   color: ${props => props.color ? props.color : 'transparent'};
   margin: ${props => props.margin ? props.margin : '10px 0px'};
   font-weight: ${props => props.weight ? props.weight : '500'};
-  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  background-image: ${theme.gradientPinkBlue};
   -webkit-background-clip: text;
   background-clip: text;
 `
@@ -225,7 +226,7 @@ export const FlexAboutCard = styled.div`
   background-color: ${props => props.backColor ? props.backColor : ''};
   color: ${props => props.color ? props.color : ''};
   flex-wrap: ${props => props.wrap ? props.wrap : 'nowrap'};
-  border: ${props => props.borderSize ? props.borderSize : '3px'} solid ${props => props.colorBorder ? props.colorBorder : 'grey'};
+  border: ${props => props.borderSize ? props.borderSize : '3px'} solid ${props => props.colorBorder ? props.colorBorder : theme.colors.grey};
   border-radius: ${props => props.borderRadius ? props.borderRadius : '10px'};
 
   @media (max-width: 580px) {
@@ -234,7 +235,7 @@ export const FlexAboutCard = styled.div`
 `
 
 export const P = styled.p`
-  color: ${props => props.color ? props.color : 'white'};
+  color: ${props => props.color ? props.color : theme.colors.white};
   margin: ${props => props.margin ? props.margin : '0'};
   font-weight: ${props => props.weight ? props.weight : ''};
   font-style: ${props => props.fontstyle ? props.fontstyle : ''};
@@ -259,7 +260,7 @@ export const Input = styled.input`
   width: ${props => props.width ? props.width : '80%'};
   max-width: ${props => props.maxWidth ? props.maxWidth : '1000px'};
   height: ${props => props.height ? props.height : 'auto'};
-  border-image-source: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  border-image-source: ${theme.gradientPinkBlue};
   border-image-slice: 1;
   border-width: 3px;
 `
@@ -267,7 +268,7 @@ export const Input = styled.input`
 export const TextArea = styled.textarea`
   width: ${props => props.width ? props.width : 'auto'};
   height: ${props => props.height ? props.height : 'auto'};
-  border-image-source: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  border-image-source: ${theme.gradientPinkBlue};
   border-image-slice: 1;
   border-width: 3px;
 `
@@ -275,7 +276,7 @@ export const TextArea = styled.textarea`
 export const Label = styled.label`
   font-size:20px;
   color: ${props => props.color ? props.color : 'transparent'};
-  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  background-image: ${theme.gradientPinkBlue};
   -webkit-background-clip: text;
   background-clip: text;
 `
@@ -284,7 +285,7 @@ export const Button = styled.button`
   width: ${props => props.width ? props.width : '100%'};
   height: ${props => props.height ? props.height : '40px'};
   margin: ${props => props.margin ? props.margin : '0px'};
-  background-image: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+  background-image: ${theme.gradientPinkBlue};
   border: 0px solid;
   border-radius: ${props => props.borderRadius ? props.borderRadius : '5px'};
   color: ${props => props.color ? props.color : theme.colors.white};
@@ -292,7 +293,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-image: linear-gradient(-90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+    background-image: ${theme.gradientBluePink};
     transform: scale(1.1);
   }
   `
@@ -306,14 +307,14 @@ export const Button = styled.button`
     flex-direction: ${props => props.direction ? props.direction : 'row'};
     justify-content: ${props => props.justify ? props.justify : 'space-between'};
     align-items: ${props => props.align ? props.align : 'center'};
-    margin: ${props => props.margin ? props.margin : 'auto'};
+    margin: ${props => props.margin ? props.margin : '15px auto'};
     padding: ${props => props.padding ? props.padding : 'auto'};
-    background-color: grey;
+    background-color: #707070;
     border: solid;
-    border-image-source: linear-gradient(90deg, #fc87da 0%, #cb94ef 36%, #41e0e7 70%, #28f6c2 100%);
+    border-image-source: ${theme.gradientPinkBlue};
     border-image-slice: 1;
     border-width: 3px;
-    box-shadow: ${props => props.shadow ? props.shadow : '5px 5px 5px grey'};
+    box-shadow: ${props => props.shadow ? props.shadow : '3px 3px 10px #DCDCDC'};
     cursor: ${props => props.cursor ? props.cursor : ''};
     flex-wrap: ${props => props.wrap ? props.wrap : 'nowrap'};
 
@@ -355,10 +356,12 @@ export const TechCard = styled.div`
 `
 export const TechElement = styled.div`
   margin: ${props => props.margin ? props.margin : '5px'};
-  background-color: ${props => props.backColor ? props.backColor : 'white'};
-  color: ${props => props.color ? props.color : ''};
+  background-color: ${props => props.backColor ? props.backColor : theme.colors.blue};
+  color: ${props => props.color ? props.color : theme.colors.white};
   border-radius: ${props => props.borderRadius ? props.borderRadius : '20px'};
   padding: 10px;
   font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
 
 `

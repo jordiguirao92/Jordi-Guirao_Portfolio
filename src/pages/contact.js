@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {useHistory} from 'react-router-dom';
+import { useState} from 'react';
 import Slide from 'react-reveal/Slide';
 import emailjs from 'emailjs-com';
 
 import MainLayout from '../componets/layout/MainLayout'
-import {Button, Input, Label, TextArea, P, H1, H3, Spacer, FlexHome, ImageHome, FlexHomeContent, ImageHomeCode, Flex} from '../styles/ui';
+import {Button, Input, Label, TextArea, P, Spacer, Flex} from '../styles/ui';
 const {REACT_APP_SERVICEID, REACT_APP_TEMPLATEID, REACT_APP_USERID } = process.env
 
 

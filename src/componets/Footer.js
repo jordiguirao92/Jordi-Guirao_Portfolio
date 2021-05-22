@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react';
-import { Link} from 'react-router-dom';
-
 import {FooterStyled, AFooter}from '../styles/ui';
 
 
