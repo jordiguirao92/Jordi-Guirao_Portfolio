@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 
 
 export const Wrapper = styled.div`
-  width: ${props => props.width ? props.width : 'auto'};
+  width: ${props => props.width ? props.width : '100vh'};
   height: ${props => props.height ? props.height : '100vh'};
   background-image: linear-gradient(180deg, ${theme.colors.blue} 85%, ${theme.colors.white} 95%);
 `
 export const WrapperDiv = styled.div`
   min-height: 100vh;
+  width: ${props => props.width ? props.width : '100vh'};
 `
 
 export const Spacer = styled.div`
@@ -183,7 +184,7 @@ export const FlexHomeContent = styled.div`
   flex-wrap: ${props => props.wrap ? props.wrap : 'nowrap'};
   
 
-  @media (max-width: 580px) {
+  @media all and (max-width: 580px) {
     flex-direction: column;
     }
 `
@@ -207,7 +208,7 @@ export const ImageHomeCode = styled.img`
   width: ${props => props.width ? props.width : 'auto'};
   margin: ${props => props.margin ? props.margin : ''};
 
-  @media (max-width: 580px) {
+  @media all and (max-width: 580px) {
     height: 450px;
     }
 
@@ -230,7 +231,7 @@ export const FlexAboutCard = styled.div`
   border: ${props => props.borderSize ? props.borderSize : '3px'} solid ${props => props.colorBorder ? props.colorBorder : theme.colors.grey};
   border-radius: ${props => props.borderRadius ? props.borderRadius : '10px'};
 
-  @media (max-width: 580px) {
+  @media all and (max-width: 580px) {
     flex-direction: column;
     }
 `
@@ -248,7 +249,7 @@ export const ImageProfileAbout = styled.img`
   width: ${props => props.width ? props.width : 'auto'};
   margin: ${props => props.margin ? props.margin : ''};
 
-  @media (max-width: 580px) {
+  @media all and (max-width: 580px) {
     height: auto;
     }
 
@@ -319,7 +320,7 @@ export const Button = styled.button`
     cursor: ${props => props.cursor ? props.cursor : ''};
     flex-wrap: ${props => props.wrap ? props.wrap : 'nowrap'};
 
-    @media (max-width: 580px) {
+    @media all and (max-width: 580px) {
     flex-direction: column;
     }
   `
