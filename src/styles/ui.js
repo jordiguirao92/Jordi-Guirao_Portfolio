@@ -151,8 +151,9 @@ export const H3Colored = styled.h3`
 `
 export const H4 = styled.h4`
   color: ${props => props.color ? props.color : 'white'};
-  margin: ${props => props.margin ? props.margin : '10px 0px'};;
+  margin: ${props => props.margin ? props.margin : '10px 0px'};
   font-weight: ${props => props.weight ? props.weight : '500'};
+  font-size: ${props => props.fontSize ? props.fontSize : ''};
 `
 
 export const FlexHome = styled.div`

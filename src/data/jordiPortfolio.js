@@ -49,13 +49,13 @@ export const portfolio = [
         project_name: "React Gallery App",
         technologies: ["JavaScript", "HTML", "CSS", "Axios", "React"],
         description: "React Gallery App, where you can search images from Flickr.",
-        live_link: "", 
+        live_link: "https://jordiguirao92.github.io/Techdegree-ReactGalleryApp/", 
         github_link: "https://github.com/jordiguirao92/Techdegree-ReactGalleryApp", 
         images_urls:''
     },
     {
         id: 6,
-        project_name: "Rest_API",
+        project_name: "Rest API",
         technologies: ["JavaScript", "Express", "Sequelize"],
         description: "A REST API using Express. The API will provide a way for users to administer a school database containing information about courses: users can interact with the database by retrieving a list of courses, as well as adding, updating and deleting courses in the database.",
         live_link: "", 

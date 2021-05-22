@@ -21,15 +21,14 @@ const PortfolioPage = () => {
                 return(
                     <Card>
                     <FlexCard width='100%'>
-                        <Flex justify='flex-start' margin='0px' width='100%'>
-                            <H4 margin='5px 0px' weight='bold' color='black'>{project.project_name}</H4>
+                        <Flex justify='flex-start' margin='0px 0px 10px 0px' width='100%'>
+                            <H4 margin='5px 0px' weight='bold' color='black' fontSize='18px'>{project.project_name}</H4>
                             <Flex margin='0px 0px 0px auto'>
                                 <a href={project.live_link ? project.live_link : ''} target='_blank'><FontAwesomeIcon icon={faEye} style={{ color: project.live_link ? 'rgb(153, 153, 255' : 'rgb(153, 153, 255, 0.15' }} size="2x"/></a>
                                 <Spacer width='20px'/>
                                 <a href={project.github_link && project.github_link} target='_blank'><FontAwesomeIcon icon={faGithub} style={{ color: 'black' }} size="2x"/></a>
                             </Flex>    
                         </Flex>
-                        
                         <P fontstyle='oblique'>{project.description}</P>
                         <TechCard>
                         {
