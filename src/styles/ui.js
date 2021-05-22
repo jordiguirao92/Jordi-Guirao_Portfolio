@@ -245,12 +245,14 @@ export const P = styled.p`
 export const ImageProfileAbout = styled.img`
   height: ${props => props.height ? props.height : '220px'};
   max-width: ${props => props.maxWidth ? props.maxWidth : ''};
-  border-radius: ${props => props.borderRadius ? props.borderRadius : '2%'};
+  border-radius: ${props => props.borderRadius ? props.borderRadius : '5px'};
   width: ${props => props.width ? props.width : 'auto'};
   margin: ${props => props.margin ? props.margin : ''};
 
   @media all and (max-width: 580px) {
     height: auto;
+    width: 40%;
+    margin: auto;
     }
 
 `
