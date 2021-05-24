@@ -14,9 +14,7 @@ const AboutPage = ({props}) => {
     const [experiences, setexperiences] = useState(true);
     const [organisation, setOrganisations] = useState(false);
     const [educations, setEducations] = useState(false);
-    const [certification, setCertification] = useState(false);
-    console.log(props)
-    
+    const [certification, setCertification] = useState(false);    
 
     return(
         <>

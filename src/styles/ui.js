@@ -4,13 +4,21 @@ import { Link } from 'react-router-dom';
 
 
 export const Wrapper = styled.div`
-  width: ${props => props.width ? props.width : '100vh'};
+  width: ${props => props.width ? props.width : '100%'};
   height: ${props => props.height ? props.height : '100vh'};
   background-image: linear-gradient(180deg, ${theme.colors.blue} 85%, ${theme.colors.white} 95%);
+
+  @media (max-width: 580px) {
+    width: 100vh;
+    }
 `
 export const WrapperDiv = styled.div`
   min-height: 100vh;
-  width: ${props => props.width ? props.width : '100vh'};
+  width: ${props => props.width ? props.width : '100%'};
+
+  @media (max-width: 580px) {
+    width: 100vh;
+    }
 `
 
 export const Spacer = styled.div`

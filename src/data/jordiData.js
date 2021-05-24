@@ -17,7 +17,7 @@ export const experience = [
         company: 'Naturgy',
         rol: 'Technical Engineer in Operations and Maintenance',
         location: 'Barcelona, Spain',
-        startYear: 2021,
+        startYear: 2017,
         finishYear: 'present'
     },
     {
